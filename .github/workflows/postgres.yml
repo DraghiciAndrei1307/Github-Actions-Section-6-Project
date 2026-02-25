@@ -15,5 +15,6 @@ jobs:
       - name: Check PostgreSQL Client
         run: psql --version
       - name: Connect to Supabase PostgreSQL database
-        run: psql -h $POSTGRESQL_CLUSTER_ADDRESS -U $POSTGRESQL_USERNAME -p $PORT -d postgres
+        run: |
+          psql "postgresql://$POSTGRESQL_USERNAME:$POSTGRESQL_PASSWORD@$POSTGRESQL_CLUSTER_ADDRESS:$PORT/postgres?sslmode=require"
 
