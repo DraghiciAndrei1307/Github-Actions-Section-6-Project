@@ -16,5 +16,5 @@ jobs:
         run: psql --version
       - name: Connect to Supabase PostgreSQL database
         run: |
-          psql "postgresql://postgres:$POSTGRESQL_PASSWORD@db.nlkorhyvpztahimbwlmb.supabase.co:5432/postgres?sslmode=require" -c "SELECT 1;"
+          psql "postgresql://postgres.nlkorhyvpztahimbwlmb:$POSTGRESQL_PASSWORD@aws-1-eu-west-1.pooler.supabase.com:5432/postgres?sslmode=require" -c "SELECT 1;"
 
