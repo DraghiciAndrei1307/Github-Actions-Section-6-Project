@@ -1,0 +1,17 @@
+name: PostgreSQL Test Workflow
+on: workflow_dispatch
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    environment: testing
+    env:
+      POSTGRESQL_CLUSTER_ADDRESS: db.nlkorhyvpztahimbwlmb.supabase.co
+      POSTGRESQL_USERNAME: ${{ secrets.POSTGRESQL_USERNAME }}
+      POSTGRESQL_PASSWORD: ${{ secrets.POSTGRESQL_PASSWORD }}
+      PORT: 5432
+    steps:
+      - name: Check PostgreSQL Client
+        run: postgres --version
+      #- name: Connect to Supabase PostgreSQL database
+
+
