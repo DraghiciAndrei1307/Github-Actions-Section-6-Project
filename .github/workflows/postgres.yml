@@ -11,10 +11,10 @@ jobs:
       PORT: 5432
     steps:
       - name: Install PostgreSQL client
-        run: sudo apt-get install -y postgresql-client
+        run: sudo apt-get update && sudo apt-get install -y postgresql-client
       - name: Check PostgreSQL Client
         run: psql --version
       - name: Connect to Supabase PostgreSQL database
         run: |
-          psql "postgresql://$POSTGRESQL_USERNAME:$POSTGRESQL_PASSWORD@$POSTGRESQL_CLUSTER_ADDRESS:$PORT/postgres?sslmode=require"
+          psql "postgresql://postgres:$POSTGRESQL_PASSWORD@db.nlkorhyvpztahimbwlmb.supabase.co:5432/postgres?sslmode=require" -c "SELECT 1;"
 
