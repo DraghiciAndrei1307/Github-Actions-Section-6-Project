@@ -6,7 +6,7 @@ jobs:
     environment: testing
     env:
       POSTGRESQL_CLUSTER_ADDRESS: db.nlkorhyvpztahimbwlmb.supabase.co
-      POSTGRESQL_USERNAME: ${{ secrets.POSTGRESQL_USERNAME }}
+      POSTGRESQL_USERNAME: postgres
       POSTGRESQL_PASSWORD: ${{ secrets.POSTGRESQL_PASSWORD }}
       PORT: 5432
     steps:
